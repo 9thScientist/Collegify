@@ -20,6 +20,6 @@ p
   strong
     | Biography:
   = @user.biography
-= link_to 'Edit', edit_user_path(@user)
+= link_to 'Edit', edit_user_path(@user), class: 'btn btn-default btn-lg'
 |  | 
 = link_to 'Back', users_path

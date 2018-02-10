@@ -1,3 +1,44 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background:rgb(15,20,20) !important;
+  color:#fff !important;
+  font-family:'open sans' !important;
+}
+.jumbotron{
+background:transparent !important;
+text-align:center;
+letter-spacing:-3px;
+margin-bottom:0 !important;
+}
+.fluid_container.one{
+ background:rgb(27,30,31);
+}
+.container.main{
+padding-top:15px;
+}
+.row{
+margin-bottom:20px;
+}
+footer{
+  text-align:center;
+}
+.box{
+  width:25%;
+  height:90px;
+  overflow:hidden;
+  display:inline-block;
+}
+img{
+padding:10px 10px 10px 0;
+ width:100%;
+}
+button{
+color:#000 !important;
+background:rgb(230,231,232);
+&:hover{
+  background:rgb(255,255,255);
+}
+}
+
