@@ -1,0 +1,18 @@
+p#notice= notice
+
+h1
+  =link_to @topic.course.name, @topic.course
+
+h2
+  = @topic.name
+
+- unless @topic.notes.nil?
+  ul
+    - @topic.notes.each do |n|
+      li
+        = link_to n.title, course_topic_note_path(@course, @topic, n)
+
+= link_to 'Edit', edit_course_topic_path(@course, @topic)
+| \
+= link_to 'Back', course_topics_path
+ 

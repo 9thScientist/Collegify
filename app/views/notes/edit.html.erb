@@ -1,6 +1,8 @@
 <h1>Editing Note</h1>
 
-<%= render 'form', note: @note %>
+<%= form_for @note, url: edit_course_topic_note_path do |f| %> 
+  <%= render 'form', note: @note, f: f%>
+<% end %>
 
 <%= link_to 'Show', @note %> |
 <%= link_to 'Back', notes_path %>

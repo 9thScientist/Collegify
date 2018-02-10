@@ -10,6 +10,7 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
+    @course = Course.find(params[:course_id])
   end
 
   # GET /topics/new
@@ -20,6 +21,8 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:id])
   end
 
   # POST /topics
@@ -45,7 +48,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+        format.html { redirect_to course_topic_path(@topic.course, @topic), notice: 'Topic was successfully updated.' }
         format.json { render :show, status: :ok, location: @topic }
       else
         format.html { render :edit }
