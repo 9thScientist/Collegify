@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   def index
     @course = Course.find(params[:course_id])
     @topic = Topic.find(params[:topic_id])
-    @notes = Note.all
+    @notes = @topic.notes
   end
 
   # GET /notes/1
