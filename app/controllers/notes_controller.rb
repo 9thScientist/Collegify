@@ -4,12 +4,16 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
     @notes = Note.all
   end
 
   # GET /notes/1
   # GET /notes/1.json
   def show
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   # GET /notes/new
@@ -19,16 +23,21 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   # POST /notes
   # POST /notes.json
   def create
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
     @note = Note.new(note_params)
+    @note.topic = @topic
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to course_topic_note_path(@course, @topic, @note), notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }
@@ -40,9 +49,12 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1
   # PATCH/PUT /notes/1.json
   def update
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
+
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, notice: 'Note was successfully updated.' }
+        format.html { redirect_to course_topic_note_path, notice: 'Note was successfully updated.' }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit }
@@ -56,7 +68,7 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to notes_url, notice: 'Note was successfully destroyed.' }
+      format.html { redirect_to course_topic_notes_path, notice: 'Note was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

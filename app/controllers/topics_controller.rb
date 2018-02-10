@@ -4,7 +4,8 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @course = Course.find(params[:course_id])
+    @topics = @course.topics 
   end
 
   # GET /topics/1
@@ -62,7 +63,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic.destroy
     respond_to do |format|
-      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
+      format.html { redirect_to course_topics_url, notice: 'Topic was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

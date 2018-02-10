@@ -1,0 +1,23 @@
+p#notice= notice
+
+h1
+  = link_to @course.name, course_path(@course)
+
+h2
+  = link_to @topic.name, course_topic_path(@course, @topic)
+
+h3
+  = @note.title
+p
+  strong points:
+  br
+  = @note.points
+p
+  strong description:
+  br
+  = @note.description
+
+= link_to 'edit', edit_course_topic_note_path
+| \
+= link_to 'back', course_topic_notes_path
+ 

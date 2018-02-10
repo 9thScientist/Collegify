@@ -16,9 +16,9 @@
       <tr>
         <td><%= topic.name %></td>
         <td><%= topic.course %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-        <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', course_topic_path(@course, topic) %></td>
+        <td><%= link_to 'Edit', edit_course_topic_path(@course, topic) %></td>
+        <td><%= link_to 'Destroy', course_topic_path(@course, topic), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Topic', new_topic_path %>
+<%= link_to 'New Topic', new_course_topic_path %>

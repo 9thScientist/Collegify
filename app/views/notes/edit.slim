@@ -1,0 +1,8 @@
+h1 Editing Note
+
+= form_for @note, url: course_topic_note_path do |f|
+  = render 'form', note: @note, f: f
+
+= link_to 'Show', course_topic_note_path(@course, @topic, @note)
+| |
+= link_to 'Back', course_topic_notes_path
