@@ -15,7 +15,8 @@ development:
   encoding: unicode
   database: collegify_development
   pool: 5
-  username: collegify 
+  username: collegify2
+  password: password
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,7 +26,8 @@ test:
   encoding: unicode
   database: collegify_test
   pool: 5
-  username: collegify
+  username: collegify2
+  password: password
   
 production:
   <<: *default
