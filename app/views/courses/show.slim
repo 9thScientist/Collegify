@@ -4,10 +4,12 @@ p
   = @course.name
 
   - unless @course.topics.nil?
-    li
+    ul
       - @course.topics.each do |t|
-        ul
-          = link_to t.name, topic_path(t)
+        li
+          = link_to t.name, course_topic_path(@course, t)
+
+  = link_to 'Create Topic', new_course_topic_path(@course)
 = link_to 'Edit', edit_course_path(@course)
 | \
 = link_to 'Back', courses_path
