@@ -1,0 +1,6 @@
+h1
+  | Editing Topic
+= render 'form', topic: @topic
+= link_to 'Show', course_topic_path(@course, @topic)
+|  | 
+= link_to 'Back', course_topics_path

@@ -1,0 +1,15 @@
+= form_for @topic, url: @topic.new_record? ? course_topics_path(@course) : course_topic_path(@course, @topic) do |f|
+  - if @topic.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@topic.errors.count, "error")
+        |  prohibited this @topic from being saved:
+      ul
+        - @topic.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit
