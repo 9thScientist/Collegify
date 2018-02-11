@@ -1,5 +1,5 @@
 - if note.errors.any?
-  #error_explanation
+  .alert.alert-danger
     h2
       = pluralize(note.errors.count, "error")
       | prohibited this note from being saved:
@@ -8,11 +8,14 @@
         li= message
 .field
   = f.label :title
-  = f.text_field :title
+  = f.text_field :title, class: "form-control"
+  br
 .field
-  = f.file_field :content, as: :file
+  = f.file_field :content, as: :file, class: "form-control-file"
 .field
   = f.label :description
-  = f.text_area :description
+  = f.text_area :description, class: "form-control"
+  
+hr
 .actions
-  = f.submit
+  = f.submit class: "btn btn-primary btn-lg"

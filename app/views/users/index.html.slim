@@ -20,7 +20,7 @@ table
     - @users.each do |user|
       tr
         td
-          = user.username
+          = link_to user.username, session[:user_id] = user.id ? nil : nil
         td
           = user.points
         td

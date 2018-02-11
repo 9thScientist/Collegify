@@ -1,27 +1,28 @@
-p#notice
-  = notice
-h1
-  | Topics
-table
-  thead
-    tr
-      th
-        | Name
-      th
-        | Course
-      th[colspan="3"]
-  tbody
-    - @topics.each do |topic|
+.container
+  p#notice
+    = notice
+  h1
+    | Topics
+  table
+    thead
       tr
-        td
-          = topic.name
-        td
-          = topic.course
-        td
-          = link_to 'Show', course_topic_path(@course, topic)
-        td
-          = link_to 'Edit', edit_course_topic_path(@course, topic)
-        td
-          = link_to 'Destroy', course_topic_path(@course, topic), method: :delete, data: { confirm: 'Are you sure?' }
-br
-= link_to 'New Topic', new_course_topic_path
+        th
+          | Name
+        th
+          | Course
+        th[colspan="3"]
+    tbody
+      - @topics.each do |topic|
+        tr
+          td
+            = topic.name
+          td
+            = topic.course.name
+          td
+            = link_to 'Show', course_topic_path(@course, topic)
+          td
+            = link_to 'Edit', edit_course_topic_path(@course, topic)
+          td
+            = link_to 'Destroy', course_topic_path(@course, topic), method: :delete, data: { confirm: 'Are you sure?' }
+  br
+    = link_to 'New Topic', new_course_topic_path

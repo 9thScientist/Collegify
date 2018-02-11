@@ -1,15 +1,17 @@
-= form_for(course) do |f|
-  - if course.errors.any?
-    #error_explanation
-      h2
-        = pluralize(course.errors.count, "error")
-        |  prohibited this course from being saved:
-      ul
-        - course.errors.full_messages.each do |message|
-          li
-            = message
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit
+.form-group
+  = form_for(course) do |f|
+    - if course.errors.any?
+      #error_explanation
+        h2
+          = pluralize(course.errors.count, "error")
+          |  prohibited this course from being saved:
+        ul
+          - course.errors.full_messages.each do |message|
+            li
+              = message
+    .field
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+    hr
+    .actions
+      = f.submit class: "btn btn-lg btn-primary"

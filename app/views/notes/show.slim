@@ -1,35 +1,24 @@
-p#notice= notice
-
-h1
-  = link_to @course.name, course_path(@course)
-
-h2
-  = link_to @topic.name, course_topic_path(@course, @topic)
-
-h3
-  = @note.title
-
-p
-  = link_to "Download", @note.content.url
-p
-  strong points:
-  br
-  = @note.points
-p
-  strong description:
-  br
-  = @note.description
-
-p
-  = session[:user_id]
-- unless @note.comments.nil?
+.container
+  p#notice= notice
+  
+  h1
+    = link_to @course.name, course_path(@course)
+  hr
+  
+  h2
+    = link_to @topic.name, course_topic_path(@course, @topic)
+  
   h3
-    | Comments
-  - @note.comments.each do |c|
-    p
-      strong
-        | #{c.user.username} : 
-      = c.body
-    hr
-
-= render 'comment_form', note: @note
+    = @note.title
+  
+  p
+    = link_to "Download", @note.content.url
+  p
+    strong points:
+    br
+    = @note.points
+  .panel.panel-default
+    strong
+      | Description
+    .panel-body
+      = @note.description
