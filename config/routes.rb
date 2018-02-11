@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  root 'users#index'
+
   resources :courses do
     resources :topics do
-      resources :notes
+      resources :notes do
+        resources :comments
+      end
     end
   end
 

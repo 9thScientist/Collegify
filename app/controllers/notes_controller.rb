@@ -14,6 +14,7 @@ class NotesController < ApplicationController
   def show
     @course = Course.find(params[:course_id])
     @topic = Topic.find(params[:topic_id])
+    @comment = Comment.new
   end
 
   # GET /notes/new

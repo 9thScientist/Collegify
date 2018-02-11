@@ -20,7 +20,16 @@ p
   br
   = @note.description
 
-= link_to 'edit', edit_course_topic_note_path
-| \
-= link_to 'back', course_topic_notes_path
- 
+p
+  = session[:user_id]
+- unless @note.comments.nil?
+  h3
+    | Comments
+  - @note.comments.each do |c|
+    p
+      strong
+        | #{c.user.username} : 
+      = c.body
+    hr
+
+= render 'comment_form', note: @note

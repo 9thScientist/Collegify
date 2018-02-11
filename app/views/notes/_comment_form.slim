@@ -1,0 +1,7 @@
+= form_for [@note, @comment], url: course_topic_note_comments_path(@course, @topic, @note) do |f|
+  = f.hidden_field :user, session[:user]
+  p
+    = f.label :body
+    = f.text_area :body
+  p
+    = f.submit
