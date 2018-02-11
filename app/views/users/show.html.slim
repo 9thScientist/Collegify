@@ -1,25 +1,26 @@
-p#notice
-  = notice
-p
-  strong
-    | Username:
-  = @user.username
-p
-  strong
-    | Points:
-  = @user.points
-p
-  strong
-    | University:
-  = @user.university
-p
-  strong
-    | Course:
-  = @user.course
-p
-  strong
-    | Biography:
-  = @user.biography
-= link_to 'Edit', edit_user_path(@user)
-|  | 
-= link_to 'Back', users_path
+.container
+  p#notice
+    = notice
+  p
+    strong
+      | Username:
+    = @user.username
+  p
+    strong
+      | Points:
+    = @user.points
+  p
+    strong
+      | University:
+    = @user.university
+  p
+    strong
+      | Course:
+    = @user.course
+  p
+    strong
+      | Biography:
+    = @user.biography
+  = link_to 'Edit', edit_user_path(@user)
+  |  |
+  = link_to 'Back', users_path
