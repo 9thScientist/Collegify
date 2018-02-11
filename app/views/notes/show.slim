@@ -23,14 +23,14 @@
     .panel-body
       = @note.description
 
-- unless @note.comments.nil?
-  h3
-    | Comments
-  - @note.comments.each do |c|
-    p
-      strong
-        | #{c.user.username} : 
-      = c.body
-    hr
-
-= render 'comment_form', note: @note
+  - unless @note.comments.nil?
+    h3
+      | Comments
+    - @note.comments.each do |c|
+      p
+        strong
+          | #{c.user.username} : 
+        = c.body
+      hr
+  
+  = render 'comment_form', note: @note
