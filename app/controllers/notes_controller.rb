@@ -34,6 +34,7 @@ class NotesController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @note = Note.new(note_params)
     @note.topic = @topic
+    @note.points = 0
 
     respond_to do |format|
       if @note.save
