@@ -17,7 +17,7 @@ Notes:
 * Uses PostgreSQL for database service
 
 
-Parte mais intressante:
+Parte mais interessante:
 
     http://0.0.0.0:3000/courses
 
