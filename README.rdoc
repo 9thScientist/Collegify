@@ -16,3 +16,10 @@ Notes:
 
 * Uses PostgreSQL for database service
 
+
+Parte mais intressante:
+
+    http://0.0.0.0:3000/courses
+
+Este projeto é fruto do Hackathon Hacktivate, que decorreu de 10 a 11 de Fevereiro de 2018
+    https://hacktivate.io/

@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
 
   def current_user
     if session[:user_id].nil?
-      1
     else
       session[:user_id]
     end
