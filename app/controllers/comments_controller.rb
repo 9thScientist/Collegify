@@ -12,10 +12,14 @@ class CommentsController < ApplicationController
   private
 
   def current_user
-    session[:user_id]
+    if session[:user_id].nil?
+      1
+    else
+      session[:user_id]
+    end
   end
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:user, :body)
   end
 end
